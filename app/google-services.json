@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "756968016125",
+    "project_id": "fir-database-36bc3",
+    "storage_bucket": "fir-database-36bc3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756968016125:android:7b30d404d97dd1f2891694",
+        "android_client_info": {
+          "package_name": "com.example.diploma_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzE6f9tGFZX23tg-cP6Ue-cv4PsCZbDQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:756968016125:android:7254624cea8c0cfa891694",
+        "android_client_info": {
+          "package_name": "diploma_project_Admin.ecommerceadmin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzE6f9tGFZX23tg-cP6Ue-cv4PsCZbDQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
