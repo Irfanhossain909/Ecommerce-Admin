@@ -54,8 +54,11 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
+    //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-analytics")
+    //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-firestore")
+    //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-storage")
 
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
