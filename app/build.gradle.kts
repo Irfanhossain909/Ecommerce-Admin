@@ -61,6 +61,8 @@ dependencies {
     //noinspection UseTomlInstead
     implementation("com.google.firebase:firebase-storage")
 
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
+
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
 

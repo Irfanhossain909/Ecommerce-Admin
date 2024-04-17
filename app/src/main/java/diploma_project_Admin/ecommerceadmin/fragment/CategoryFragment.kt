@@ -15,7 +15,9 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import diploma_project_Admin.ecommerceadmin.R
+import diploma_project_Admin.ecommerceadmin.adapter.CategoryAdapter
 import diploma_project_Admin.ecommerceadmin.databinding.FragmentCategoryBinding
+import diploma_project_Admin.ecommerceadmin.model.CategoryModel
 import java.util.UUID
 
 class CategoryFragment : Fragment() {
@@ -42,6 +44,8 @@ class CategoryFragment : Fragment() {
         dialog.setContentView(R.layout.progress_layout)
         dialog.setCancelable(false)
 
+        getData()
+
         binding.apply {
             imageView.setOnClickListener {
                 val intent = Intent("android.intent.action.GET_CONTENT")
@@ -58,6 +62,19 @@ class CategoryFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    private fun getData() {
+        val list = ArrayList<CategoryModel>()
+        Firebase.firestore.collection("category")
+            .get().addOnSuccessListener {
+                list.clear()
+                for (doc in it.documents){
+                    val data = doc.toObject(CategoryModel::class.java)
+                    list.add(data!!)
+                }
+                binding.categoryRecycler.adapter = CategoryAdapter(requireContext(), list)
+            }
     }
 
     private fun validateData(categoryName: String) {
@@ -102,6 +119,8 @@ class CategoryFragment : Fragment() {
                 dialog.dismiss()
                 binding.imageView.setImageDrawable(resources.getDrawable(R.drawable.pre_view))
                 binding.categoryName.text =null
+                getData()
+
                 Toast.makeText(requireContext(),"Category Added",Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener{
